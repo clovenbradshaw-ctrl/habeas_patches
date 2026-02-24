@@ -6,5 +6,5 @@ var DEPLOY_INFO = {
   author: "developer",
   prNumber: "",
   env: "development",
-  repo: "clovenbradshaw-ctrl/habeas_app"
+  repo: "clovenbradshaw-ctrl/habeas_patches"
 };
