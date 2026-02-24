@@ -5,7 +5,7 @@
 
 // ── Configuration ────────────────────────────────────────────────
 var CONFIG = {
-  MATRIX_SERVER_URL: 'https://app.aminoimmigration.com',
+  MATRIX_SERVER_URL: 'https://matrix.aminoimmigration.com',
   MATRIX_SERVER_NAME: 'aminoimmigration.com',
   ORG_ROOM_ALIAS: '#org:aminoimmigration.com',
   TEMPLATES_ROOM_ALIAS: '#templates:aminoimmigration.com',
