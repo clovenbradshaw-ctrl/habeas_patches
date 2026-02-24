@@ -1,0 +1,1289 @@
+[
+  {
+    "name": "Adams County Correctional Center",
+    "address": "20 Hobo Forks Road",
+    "city": "Natchez",
+    "state": "MS",
+    "zip": "39120",
+    "field_office": "New Orleans Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/adams-county-detention-center"
+  },
+  {
+    "name": "Adelanto ICE Processing Center",
+    "address": "Adelanto East 10400 Rancho Road | Adelanto West 10250 Rancho Road",
+    "city": "Adelanto",
+    "state": "CA",
+    "zip": "92301",
+    "field_office": "Los Angeles Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/adelanto-ice-processing-center"
+  },
+  {
+    "name": "Alamance County Detention Center",
+    "address": "109 South Maple Street",
+    "city": "Graham",
+    "state": "NC",
+    "zip": "27253",
+    "field_office": "Atlanta Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/alamance-county-detention-center"
+  },
+  {
+    "name": "Allen Parish Public Safety Complex",
+    "address": "7340 Highway 26 W",
+    "city": "Oberlin",
+    "state": "LA",
+    "zip": "70655",
+    "field_office": "New Orleans Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/allen-parish-public-safety-complex"
+  },
+  {
+    "name": "Anchorage Correctional Complex",
+    "address": "1400 E Fourth Ave",
+    "city": "Anchorage",
+    "state": "AK",
+    "zip": "99501",
+    "field_office": "Seattle Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/anchorage-correctional-complex"
+  },
+  {
+    "name": "Baker County Detention Center",
+    "address": "1 Sheriff's Office Drive",
+    "city": "MacClenny",
+    "state": "FL",
+    "zip": "32063",
+    "field_office": "Miami Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/baker-county-facility"
+  },
+  {
+    "name": "Bluebonnet Detention Facility",
+    "address": "400 2nd Street",
+    "city": "Anson",
+    "state": "TX",
+    "zip": "79501",
+    "field_office": "Dallas Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/bluebonnet-detention-facility"
+  },
+  {
+    "name": "Boone County Jail",
+    "address": "3020 Conrad Lane",
+    "city": "Burlington",
+    "state": "KY",
+    "zip": "41005",
+    "field_office": "Chicago Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/boone-county-jail"
+  },
+  {
+    "name": "Broome County Correctional Facility",
+    "address": "155 Lt. VanWinkle Drive",
+    "city": "Binghamton",
+    "state": "NY",
+    "zip": "13905",
+    "field_office": "Buffalo Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/broome-county-correctional-facility"
+  },
+  {
+    "name": "Broward Transitional Center",
+    "address": "3900 N. Powerline Road",
+    "city": "Pompano Beach",
+    "state": "FL",
+    "zip": "33073",
+    "field_office": "Miami Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/broward-transitional-center"
+  },
+  {
+    "name": "Buffalo (Batavia) Service Processing Center",
+    "address": "4250 Federal Drive",
+    "city": "Batavia",
+    "state": "NY",
+    "zip": "14020",
+    "field_office": "Buffalo Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/buffalo-batavia-service-processing-center"
+  },
+  {
+    "name": "Burleigh County Detention Center",
+    "address": "4000 Apple Creek Road",
+    "city": "Bismarck",
+    "state": "ND",
+    "zip": "58504",
+    "field_office": "St. Paul Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/burleigh-county-detention-center"
+  },
+  {
+    "name": "Butler County Sheriff’s Office",
+    "address": "705 Hanover Street",
+    "city": "Hamilton",
+    "state": "OH",
+    "zip": "45011",
+    "field_office": "Detroit Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/butler-county-sheriffs-office"
+  },
+  {
+    "name": "Calhoun County Correctional Center",
+    "address": "185 E. Michigan Street",
+    "city": "Battle Creek",
+    "state": "MI",
+    "zip": "49014",
+    "field_office": "Detroit Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/calhoun-county-correctional-center"
+  },
+  {
+    "name": "California City Detention Facility",
+    "address": "22844 Virginia Boulevard",
+    "city": "California City",
+    "state": "CA",
+    "zip": "93505",
+    "field_office": "San Francisco Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/california-city-detention-facility"
+  },
+  {
+    "name": "Campbell County Detention Center",
+    "address": "601 Central Avenue",
+    "city": "Newport",
+    "state": "KY",
+    "zip": "41071",
+    "field_office": "Chicago Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/campbell-county-detention-center"
+  },
+  {
+    "name": "Caroline Detention Facility",
+    "address": "11093 SW Lewis Memorial Dr",
+    "city": "Bowling Green",
+    "state": "VA",
+    "zip": "22427",
+    "field_office": "Washington Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/caroline-detention-facility"
+  },
+  {
+    "name": "Central Arizona Florence Correctional Center",
+    "address": "1100 Bowling Road",
+    "city": "Florence",
+    "state": "AZ",
+    "zip": "85132",
+    "field_office": "Phoenix Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/florence-correctional-center"
+  },
+  {
+    "name": "Central Louisiana ICE Processing Center",
+    "address": "830 Pine Hill Road",
+    "city": "Jena",
+    "state": "LA",
+    "zip": "71342",
+    "field_office": "New Orleans Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/central-louisiana-ipc"
+  },
+  {
+    "name": "Chase County Jail",
+    "address": "301 South Walnut",
+    "city": "Cottonwood Falls",
+    "state": "KS",
+    "zip": "66845",
+    "field_office": "Chicago Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/chase-county-jail"
+  },
+  {
+    "name": "Chippewa County Correctional Facility",
+    "address": "325 Court Street",
+    "city": "Sault Ste. Marie",
+    "state": "MI",
+    "zip": "49783",
+    "field_office": "Detroit Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/chippewa-county-correctional-facility"
+  },
+  {
+    "name": "Christian County Jail",
+    "address": "410 West 7th Street",
+    "city": "Hopkinsville",
+    "state": "KY",
+    "zip": "42240",
+    "field_office": "Chicago Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/christian-county-jail"
+  },
+  {
+    "name": "Cibola County Correctional Center",
+    "address": "2000 Cibola Loop",
+    "city": "Milan",
+    "state": "NM",
+    "zip": "87021",
+    "field_office": "El Paso Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/cibola-county-correctional-center"
+  },
+  {
+    "name": "Cimarron Correctional Facility",
+    "address": "3200 S. Kings Hwy",
+    "city": "Cushing",
+    "state": "OK",
+    "zip": "74023",
+    "field_office": "Dallas Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/cimarron-correctional-facility"
+  },
+  {
+    "name": "Clark County Jail",
+    "address": "501 E Court Avenue",
+    "city": "Jeffersonville",
+    "state": "IN",
+    "zip": "47130",
+    "field_office": "Chicago Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/clark-county-jail"
+  },
+  {
+    "name": "Clay County Jail",
+    "address": "611 East Jackson Street",
+    "city": "Brazil",
+    "state": "IN",
+    "zip": "47834",
+    "field_office": "Chicago Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/clay-county-jail"
+  },
+  {
+    "name": "Clinton County Correctional Facility",
+    "address": "58 Pine Mountain Road",
+    "city": "McElhattan",
+    "state": "PA",
+    "zip": "17748",
+    "field_office": "Philadelphia Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/clinton-county-correctional-facility"
+  },
+  {
+    "name": "Clinton County Jail",
+    "address": "25 McCarthy Drive",
+    "city": "Plattsburgh",
+    "state": "NY",
+    "zip": "12901",
+    "field_office": "Buffalo Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/clinton-county-jail"
+  },
+  {
+    "name": "Clinton County Sheriff's Office",
+    "address": "301 E Walnut Street",
+    "city": "Frankfort",
+    "state": "IN",
+    "zip": "46041",
+    "field_office": "Chicago Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/clinton-county-so"
+  },
+  {
+    "name": "CNMI Department of Corrections",
+    "address": "Vincente Taman Building",
+    "city": "Susupe, Saipan",
+    "state": "MP",
+    "zip": "96950",
+    "field_office": "San Francisco Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/cnmi-department-corrections"
+  },
+  {
+    "name": "Coastal Bend Detention Center",
+    "address": "4909 Farm to Market Road",
+    "city": "Robstown",
+    "state": "TX",
+    "zip": "78380",
+    "field_office": "Harlingen Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/coastal-bend-detention-center"
+  },
+  {
+    "name": "CoreCivic Laredo Processing Center",
+    "address": "4702 East Saunders",
+    "city": "Laredo",
+    "state": "TX",
+    "zip": "78401",
+    "field_office": "Harlingen Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/laredo-detention-center"
+  },
+  {
+    "name": "CoreCivic Webb County Detention Center",
+    "address": "9998 S. Highway 83",
+    "city": "Laredo",
+    "state": "TX",
+    "zip": "78046",
+    "field_office": "Harlingen Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/webb-county-detention-center"
+  },
+  {
+    "name": "Corrections Center of Northwest Ohio (CCNO)",
+    "address": "03151 Co. Rd. 24.2",
+    "city": "Stryker",
+    "state": "OH",
+    "zip": "43557",
+    "field_office": "Detroit Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/corrections-center-northwest-ohio-ccno"
+  },
+  {
+    "name": "Crow Wing County Jail",
+    "address": "313 Laurel Street",
+    "city": "Brainerd",
+    "state": "MN",
+    "zip": "56401",
+    "field_office": "St. Paul Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/crow-wing-county-jail"
+  },
+  {
+    "name": "Cumberland County Jail",
+    "address": "50 County Way",
+    "city": "Portland",
+    "state": "ME",
+    "zip": "04102",
+    "field_office": "Boston Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/cumberland-county-jail"
+  },
+  {
+    "name": "Daviess County Detention Center",
+    "address": "3337 Highway 144",
+    "city": "Owensboro",
+    "state": "KY",
+    "zip": "42303",
+    "field_office": "Chicago Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/daviess-county-detention-center"
+  },
+  {
+    "name": "Delaney Hall Detention Facility",
+    "address": "451 Doremus Avenue",
+    "city": "Newark",
+    "state": "NJ",
+    "zip": "07105",
+    "field_office": "Newark Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/delaney-hall-detention-facility"
+  },
+  {
+    "name": "Denver Contract Detention Facility (Aurora)",
+    "address": "3130 North Oakland Street",
+    "city": "Aurora",
+    "state": "CO",
+    "zip": "80010",
+    "field_office": "Denver Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/aurora-contract-detention-facility"
+  },
+  {
+    "name": "Desert View Annex",
+    "address": "10450 Rancho Road",
+    "city": "Adelanto",
+    "state": "CA",
+    "zip": "92301",
+    "field_office": "Los Angeles Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/desert-view-annex"
+  },
+  {
+    "name": "Diamondback Correctional Facility",
+    "address": "1000 Diamondback Road",
+    "city": "Watonga",
+    "state": "OK",
+    "zip": "73772",
+    "field_office": "Dallas Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/diamondback-correctional-facility"
+  },
+  {
+    "name": "Dilley Immigration Processing Center",
+    "address": "300 El Rancho Way",
+    "city": "Dilley",
+    "state": "TX",
+    "zip": "78017",
+    "field_office": "San Antonio Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/dilley-immigration-processing-center"
+  },
+  {
+    "name": "Dodge Detention Facility",
+    "address": "216 W. Center Street",
+    "city": "Juneau",
+    "state": "WI",
+    "zip": "53039",
+    "field_office": "Chicago Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/dodge-detention-facility"
+  },
+  {
+    "name": "East Hidalgo Detention Center",
+    "address": "1300 E Hwy 107",
+    "city": "La Villa",
+    "state": "TX",
+    "zip": "78562",
+    "field_office": "Harlingen Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/east-hidalgo-detention-center"
+  },
+  {
+    "name": "Eden Detention Center",
+    "address": "704 E Broadway Street",
+    "city": "Eden",
+    "state": "TX",
+    "zip": "76837",
+    "field_office": "Dallas Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/eden-detention-center"
+  },
+  {
+    "name": "El Paso Service Processing Center",
+    "address": "8915 Montana Avenue",
+    "city": "El Paso",
+    "state": "TX",
+    "zip": "79925",
+    "field_office": "El Paso Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/el-paso-service-processing-center"
+  },
+  {
+    "name": "El Valle Detention Facility",
+    "address": "1800 Industrial Drive",
+    "city": "Raymondville",
+    "state": "TX",
+    "zip": "78580",
+    "field_office": "Harlingen Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/el-valle-detention-facility"
+  },
+  {
+    "name": "Elizabeth Contract Detention Facility",
+    "address": "625 Evans Street",
+    "city": "Elizabeth",
+    "state": "NJ",
+    "zip": "07201",
+    "field_office": "Newark Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/elizabeth-contract-detention-facility"
+  },
+  {
+    "name": "Elmore County Detention Center (Elmore County Jail)",
+    "address": "2255 East 8th North",
+    "city": "Mountain Home",
+    "state": "ID",
+    "zip": "83647",
+    "field_office": "Salt Lake City Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/elmore-county-detention-center-elmore-county-jail"
+  },
+  {
+    "name": "Eloy Detention Center",
+    "address": "1705 E Hanna Road",
+    "city": "Eloy",
+    "state": "AZ",
+    "zip": "85131",
+    "field_office": "Phoenix Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/eloy-detention-center"
+  },
+  {
+    "name": "ERO El Paso Camp East Montana",
+    "address": "6920 Digital Road",
+    "city": "El Paso",
+    "state": "TX",
+    "zip": "79936",
+    "field_office": "El Paso Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/camp-east-montana"
+  },
+  {
+    "name": "Farmville Detention Center",
+    "address": "508 Waterworks Road",
+    "city": "Farmville",
+    "state": "VA",
+    "zip": "23901",
+    "field_office": "Washington Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/farmville-detention-center"
+  },
+  {
+    "name": "FCI Atlanta",
+    "address": "601 McDonough Blvd SE",
+    "city": "Atlanta",
+    "state": "GA",
+    "zip": "30315",
+    "field_office": "Atlanta Field Office",
+    "url": "https://www.ice.gov/detention-facilities/fci-atlanta"
+  },
+  {
+    "name": "FCI Leavenworth",
+    "address": "1300 Metropolitan",
+    "city": "Leavenworth",
+    "state": "KS",
+    "zip": "66048",
+    "field_office": "Chicago Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/fci-leavenworth"
+  },
+  {
+    "name": "FCI Lewisburg",
+    "address": "2400 Robert F. Miller Drive",
+    "city": "Lewisburg",
+    "state": "PA",
+    "zip": "17837",
+    "field_office": "Philadelphia Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/fci-lewisburg"
+  },
+  {
+    "name": "FDC Miami",
+    "address": "33 NE 4th Street",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33132",
+    "field_office": "Miami Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/fdc-miami"
+  },
+  {
+    "name": "FDC Philadelphia",
+    "address": "700 Arch Street",
+    "city": "Philadelphia",
+    "state": "PA",
+    "zip": "19106",
+    "field_office": "Philadelphia Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/fdc-philadelphia"
+  },
+  {
+    "name": "Federal Correctional Institution - Berlin, NH",
+    "address": "1 Success Loop Rd",
+    "city": "Berlin",
+    "state": "NH",
+    "zip": "03570",
+    "field_office": "Boston Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/federal-correctional-institution-berlin-nh"
+  },
+  {
+    "name": "Federal Detention Center, Honolulu (FDC Honolulu)",
+    "address": "351 Elliott Street",
+    "city": "Honolulu",
+    "state": "HI",
+    "zip": "96819",
+    "field_office": "San Francisco Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/federal-detention-center-honolulu-fdc-honolulu"
+  },
+  {
+    "name": "Florence Service Processing Center",
+    "address": "3250 N. Pinal Parkway",
+    "city": "Florence",
+    "state": "AZ",
+    "zip": "85132",
+    "field_office": "Phoenix Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/florence-spc"
+  },
+  {
+    "name": "Folkston D Ray ICE Processing Center",
+    "address": "3262 Hwy 252E",
+    "city": "Folkston",
+    "state": "GA",
+    "zip": "31537",
+    "field_office": "Atlanta Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/folkston-d-ray-ice-processing-center"
+  },
+  {
+    "name": "Folkston ICE Processing Center (Annex)",
+    "address": "3424 Hwy 252 E",
+    "city": "Folkston",
+    "state": "GA",
+    "zip": "31537",
+    "field_office": "Atlanta Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/folkston-ice-processing-center-annex"
+  },
+  {
+    "name": "Folkston ICE Processing Center (Main)",
+    "address": "3026 Hwy 252 East",
+    "city": "Folkston",
+    "state": "GA",
+    "zip": "31537",
+    "field_office": "Atlanta Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/folkston-ice-processing-center-main"
+  },
+  {
+    "name": "Freeborn County Jail Services",
+    "address": "411 S. Broadway Avenue",
+    "city": "Albert Lea",
+    "state": "MN",
+    "zip": "56007",
+    "field_office": "St. Paul Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/freeborn-county-jail-services"
+  },
+  {
+    "name": "Geauga County Safety Center",
+    "address": "12450 Merritt Road",
+    "city": "Chardon",
+    "state": "OH",
+    "zip": "44024",
+    "field_office": "Detroit Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/geauga-county-safety-center"
+  },
+  {
+    "name": "Glades County Detention Center",
+    "address": "1297 East SR 78",
+    "city": "Moore Haven",
+    "state": "FL",
+    "zip": "33471",
+    "field_office": "Miami Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/glades-county-detention-center"
+  },
+  {
+    "name": "Golden State Annex",
+    "address": "611 Frontage Road",
+    "city": "McFarland",
+    "state": "CA",
+    "zip": "93250",
+    "field_office": "San Francisco Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/golden-state-annex"
+  },
+  {
+    "name": "Grand Forks County Correctional Center",
+    "address": "1701 North Washington",
+    "city": "Grand Forks",
+    "state": "ND",
+    "zip": "58203",
+    "field_office": "St. Paul Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/grand-forks-county-correctional-center"
+  },
+  {
+    "name": "Grayson County Detention Center",
+    "address": "320 Shaw Station Road",
+    "city": "Leachfield",
+    "state": "KY",
+    "zip": "42754",
+    "field_office": "Chicago Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/grayson-county-detention-center"
+  },
+  {
+    "name": "Greene County Jail",
+    "address": "1199 N Haseltine Road",
+    "city": "Springfield",
+    "state": "MO",
+    "zip": "65802",
+    "field_office": "Chicago Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/greene-county-jail"
+  },
+  {
+    "name": "Guam Department of Corrections, Hagatna Detention Facility",
+    "address": "203 Aspinall Avenue",
+    "city": "Hagatna",
+    "state": "GU",
+    "zip": "96910",
+    "field_office": "San Francisco Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/guam-department-corrections-hagatna-detention-facility"
+  },
+  {
+    "name": "Henderson Detention Center",
+    "address": "18 E. Basic Road",
+    "city": "Henderson",
+    "state": "NV",
+    "zip": "89015",
+    "field_office": "Salt Lake City Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/henderson-detention-center"
+  },
+  {
+    "name": "Hopkins County Jail",
+    "address": "2250 Laffoon Trl",
+    "city": "Madisonville",
+    "state": "KY",
+    "zip": "42431",
+    "field_office": "Chicago Field Office",
+    "url": "https://www.ice.gov/detention-facilities/hopkins-county"
+  },
+  {
+    "name": "Houston Contract Detention Facility",
+    "address": "15850 Export Plaza Drive",
+    "city": "Houston",
+    "state": "TX",
+    "zip": "77032",
+    "field_office": "Houston Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/houston-contract-detention-facility"
+  },
+  {
+    "name": "IAH Polk Adult Detention Facility",
+    "address": "3400 FM 350 South",
+    "city": "Livingston",
+    "state": "TX",
+    "zip": "77351",
+    "field_office": "Houston Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/iah-polk-adult-detention-facility"
+  },
+  {
+    "name": "Imperial Regional Detention Facility",
+    "address": "1572 Gateway Road",
+    "city": "Calexico",
+    "state": "CA",
+    "zip": "92231",
+    "field_office": "San Diego Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/imperial-regional-detention-facility"
+  },
+  {
+    "name": "Irwin County Detention Center",
+    "address": "132 Cotton Drive",
+    "city": "Ocilla",
+    "state": "GA",
+    "zip": "31774",
+    "field_office": "Atlanta Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/irwin-county-detention-center"
+  },
+  {
+    "name": "Jackson Parish Correctional Center",
+    "address": "287 Industrial Drive",
+    "city": "Jonesboro",
+    "state": "LA",
+    "zip": "71251",
+    "field_office": "New Orleans Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/jackson-parish-correctional-center"
+  },
+  {
+    "name": "Joe Corley Processing Center",
+    "address": "500 Hilbig Road",
+    "city": "Conroe",
+    "state": "TX",
+    "zip": "77301",
+    "field_office": "Houston Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/joe-corley-processing-center"
+  },
+  {
+    "name": "Kandiyohi County Jail",
+    "address": "2201 23rd St. NE",
+    "city": "Willmar",
+    "state": "MN",
+    "zip": "56201",
+    "field_office": "St. Paul Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/kandiyohi-county-jail"
+  },
+  {
+    "name": "Karnes County Immigration Processing Center",
+    "address": "409 FM 1144",
+    "city": "Karnes City",
+    "state": "TX",
+    "zip": "78118",
+    "field_office": "San Antonio Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/karnes-county-ipc"
+  },
+  {
+    "name": "Kay County Detention Center",
+    "address": "1101 West Dry Road",
+    "city": "Newkirk",
+    "state": "OK",
+    "zip": "74647",
+    "field_office": "Chicago Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/kay-county-detention-center"
+  },
+  {
+    "name": "Kenton County Detention Center",
+    "address": "3000 Decker Crane Lane",
+    "city": "Covington",
+    "state": "KY",
+    "zip": "41017",
+    "field_office": "Chicago Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/kenton-county-detention-center"
+  },
+  {
+    "name": "Krome North Service Processing Center",
+    "address": "18201 SW 12th Street",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33194",
+    "field_office": "Miami Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/krome-north-service-processing-center"
+  },
+  {
+    "name": "La Salle County Regional Detention Center",
+    "address": "832 East Texas HWY 44",
+    "city": "Encinal",
+    "state": "TX",
+    "zip": "78019",
+    "field_office": "San Antonio Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/la-salle-county-regional-detention-center"
+  },
+  {
+    "name": "Limestone County Detention Center",
+    "address": "910 North Tyus Street",
+    "city": "Groesbeck",
+    "state": "TX",
+    "zip": "76642",
+    "field_office": "Houston Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/limestone-county-detention-center"
+  },
+  {
+    "name": "Lincoln County Detention Center",
+    "address": "302 N Jeffers Street",
+    "city": "North Platte",
+    "state": "NE",
+    "zip": "69101",
+    "field_office": "St. Paul Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/lincoln-county-detention-center"
+  },
+  {
+    "name": "Louisiana ICE Processing Center",
+    "address": "17544 Tunica Trace",
+    "city": "Angola",
+    "state": "LA",
+    "zip": "70712",
+    "field_office": "New Orleans Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/louisiana-ice-processing-center"
+  },
+  {
+    "name": "Mahoning County Justice Center",
+    "address": "110 Fifth Avenue",
+    "city": "Youngstown",
+    "state": "OH",
+    "zip": "44503",
+    "field_office": "Detroit Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/mahoning-county-justice-center"
+  },
+  {
+    "name": "McCook Detention Center",
+    "address": "2309 US-83 N",
+    "city": "McCook",
+    "state": "NE",
+    "zip": "69001",
+    "field_office": "St. Paul Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/mccook-detention-center"
+  },
+  {
+    "name": "MDC Brooklyn",
+    "address": "80 29th Street",
+    "city": "Brooklyn",
+    "state": "NY",
+    "zip": "11232",
+    "field_office": "New York City Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/mdc-brooklyn"
+  },
+  {
+    "name": "Mesa Verde ICE Processing Center",
+    "address": "425 Golden State Avenue",
+    "city": "Bakersfield",
+    "state": "CA",
+    "zip": "93301",
+    "field_office": "San Francisco Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/mesa-verde-ice-processing-facility"
+  },
+  {
+    "name": "Miami Correctional Facility (MCF)",
+    "address": "3038 West 850S",
+    "city": "Bunker Hill",
+    "state": "IN",
+    "zip": "46914",
+    "field_office": "Chicago Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/miami-correctional-facility-mcf"
+  },
+  {
+    "name": "Monroe County Jail",
+    "address": "7000 East Dunbar Road",
+    "city": "Monroe",
+    "state": "MI",
+    "zip": "48161",
+    "field_office": "Detroit Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/monroe-county-jail"
+  },
+  {
+    "name": "Montgomery Processing Center",
+    "address": "806 Hilbig Road",
+    "city": "Conroe",
+    "state": "TX",
+    "zip": "77301",
+    "field_office": "Houston Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/montgomery-processing-center"
+  },
+  {
+    "name": "Moshannon Valley Processing Center",
+    "address": "555 GEO Drive",
+    "city": "Philipsburg",
+    "state": "PA",
+    "zip": "16866",
+    "field_office": "Philadelphia Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/moshannon-valley-processing-center"
+  },
+  {
+    "name": "Muscatine County Jail",
+    "address": "400 Walnut Street",
+    "city": "Muscatine",
+    "state": "IA",
+    "zip": "52761",
+    "field_office": "St. Paul Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/muscatine-county-jail"
+  },
+  {
+    "name": "Natrona County Detention Center",
+    "address": "1100 Bruce Lane",
+    "city": "Casper",
+    "state": "WY",
+    "zip": "82601",
+    "field_office": "Denver Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/natrona-county-detention-center"
+  },
+  {
+    "name": "Naval Station Guantanamo Bay (JTF Camp Six and Migrant Ops Center Main A)",
+    "address": "",
+    "city": "",
+    "state": "",
+    "zip": "",
+    "field_office": "Miami Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/naval-station-guantanamo-bay"
+  },
+  {
+    "name": "Nevada Southern Detention Center",
+    "address": "2190 E Mesquite Avenue",
+    "city": "Pahrump",
+    "state": "NV",
+    "zip": "89048",
+    "field_office": "Salt Lake City Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/nevada-southern-detention-center"
+  },
+  {
+    "name": "North Lake Processing Center",
+    "address": "1805 W 32nd Street",
+    "city": "Baldwin",
+    "state": "MI",
+    "zip": "49304",
+    "field_office": "Detroit Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/north-lake-processing-center"
+  },
+  {
+    "name": "Northeast Ohio Correctional Center",
+    "address": "2240 Hubbard Road",
+    "city": "Youngstown",
+    "state": "OH",
+    "zip": "44505",
+    "field_office": "Detroit Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/northeast-ohio-correctional-center"
+  },
+  {
+    "name": "Northwest ICE Processing Center (NWIPC)",
+    "address": "1623 E J Street, Suite 2",
+    "city": "Tacoma",
+    "state": "WA",
+    "zip": "98421-1615",
+    "field_office": "Seattle Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/northwest-ice-processing-center-nwipc"
+  },
+  {
+    "name": "Northwest State Correctional Facility",
+    "address": "3649 Lower Newton Road",
+    "city": "Swanton",
+    "state": "VT",
+    "zip": "05488",
+    "field_office": "Boston Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/northwest-state-correctional-facility"
+  },
+  {
+    "name": "Oldham County Detention Center",
+    "address": "3405 West Highway 146",
+    "city": "LaGrange",
+    "state": "KY",
+    "zip": "40031",
+    "field_office": "Chicago Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/oldham-county-detention-center"
+  },
+  {
+    "name": "Orange County Jail",
+    "address": "110 Wells Farm Road",
+    "city": "Goshen",
+    "state": "NY",
+    "zip": "10924",
+    "field_office": "New York City Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/orange-county-jail"
+  },
+  {
+    "name": "Otay Mesa Detention Center",
+    "address": "7488 Calzada de la Fuente",
+    "city": "San Diego",
+    "state": "CA",
+    "zip": "92154",
+    "field_office": "San Diego Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/otay-mesa-detention-center"
+  },
+  {
+    "name": "Otero County Processing Center",
+    "address": "26 McGregor Range Road",
+    "city": "Chaparral",
+    "state": "NM",
+    "zip": "88081",
+    "field_office": "El Paso Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/otero-county-processing-center"
+  },
+  {
+    "name": "Ozark County Jail",
+    "address": "1818 County Road 806",
+    "city": "Gainesville",
+    "state": "MO",
+    "zip": "65655",
+    "field_office": "Chicago Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/ozark-county-jail"
+  },
+  {
+    "name": "Pennington County Jail",
+    "address": "307 Saint Joseph St",
+    "city": "Rapid City",
+    "state": "SD",
+    "zip": "57701",
+    "field_office": "St. Paul Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/pennington-county-jail"
+  },
+  {
+    "name": "Phelps County Jail",
+    "address": "715 5th Avenue",
+    "city": "Holdrege",
+    "state": "NE",
+    "zip": "68949",
+    "field_office": "St. Paul Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/phelps-county-jail"
+  },
+  {
+    "name": "Phelps County Jail",
+    "address": "500 W. 2nd Street",
+    "city": "Rolla",
+    "state": "MO",
+    "zip": "65401",
+    "field_office": "Chicago Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/phelps-county-jail-0"
+  },
+  {
+    "name": "Pike County Correctional Facility",
+    "address": "175 Pike County Blvd.",
+    "city": "Lords Valley",
+    "state": "PA",
+    "zip": "18428",
+    "field_office": "Philadelphia Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/pike-county-correctional-facility"
+  },
+  {
+    "name": "Pine Prairie ICE Processing Center",
+    "address": "1133 Hampton Dupre Road",
+    "city": "Pine Prairie",
+    "state": "LA",
+    "zip": "70576",
+    "field_office": "New Orleans Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/pine-prairie-ice-processing-center"
+  },
+  {
+    "name": "Plymouth County Correctional Facility",
+    "address": "26 Long Pond Road",
+    "city": "Plymouth",
+    "state": "MA",
+    "zip": "02360",
+    "field_office": "Boston Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/plymouth-county-correctional-facility"
+  },
+  {
+    "name": "Polk County Jail",
+    "address": "1985 NE 51st Place",
+    "city": "Des Moines",
+    "state": "IA",
+    "zip": "50313",
+    "field_office": "St. Paul Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/polk-county-jail"
+  },
+  {
+    "name": "Port Isabel Service Processing Center",
+    "address": "27991 Buena Vista Blvd.",
+    "city": "Los Fresnos",
+    "state": "TX",
+    "zip": "78566",
+    "field_office": "Harlingen Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/port-isabel-service-processing-center"
+  },
+  {
+    "name": "Pottawattamie County Jail",
+    "address": "1400 Big Lake Road",
+    "city": "Council Bluffs",
+    "state": "IA",
+    "zip": "51501",
+    "field_office": "St. Paul Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/pottawattamie-county-jail"
+  },
+  {
+    "name": "Prairieland Detention Facility",
+    "address": "1209 Sunflower Lane",
+    "city": "Alvarado",
+    "state": "TX",
+    "zip": "76009",
+    "field_office": "Dallas Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/prairieland-detention-facility"
+  },
+  {
+    "name": "Richwood Correctional Center",
+    "address": "180 Pine Bayou Circle",
+    "city": "Monroe",
+    "state": "LA",
+    "zip": "71202",
+    "field_office": "New Orleans Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/richwood-correctional-center"
+  },
+  {
+    "name": "Rio Grande Processing Center",
+    "address": "1001 San Rio Blvd",
+    "city": "Laredo",
+    "state": "TX",
+    "zip": "78046",
+    "field_office": "Harlingen Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/rio-grande-detention-center"
+  },
+  {
+    "name": "River Correctional Center",
+    "address": "26362 Highway 15",
+    "city": "Ferriday",
+    "state": "LA",
+    "zip": "71334",
+    "field_office": "New Orleans Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/river-correctional-center"
+  },
+  {
+    "name": "Rolling Plains Detention Center",
+    "address": "118 County Road 206",
+    "city": "Haskell",
+    "state": "TX",
+    "zip": "79521",
+    "field_office": "Dallas Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/rolling-plains-detention-center"
+  },
+  {
+    "name": "San Luis Regional Detention Center",
+    "address": "406 North Avenue D",
+    "city": "San Luis",
+    "state": "AZ",
+    "zip": "85349",
+    "field_office": "San Diego Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/san-luis-regional-detention-center"
+  },
+  {
+    "name": "Sarpy County Department of Corrections",
+    "address": "1206 Golden Gate Drive",
+    "city": "Papillion",
+    "state": "NE",
+    "zip": "68046",
+    "field_office": "St. Paul Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/sarpy-county-department-corrections"
+  },
+  {
+    "name": "Seneca County Jail",
+    "address": "3040 South State Route 100",
+    "city": "Tiffin",
+    "state": "OH",
+    "zip": "44883",
+    "field_office": "Detroit Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/seneca-county-jail"
+  },
+  {
+    "name": "Sherburne County Jail Services",
+    "address": "13880 Business Center Drive NW",
+    "city": "Elk River",
+    "state": "MN",
+    "zip": "55330",
+    "field_office": "St. Paul Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/sherburne-county-jail-services"
+  },
+  {
+    "name": "Sioux County Jail",
+    "address": "4363 Ironwood Avenue",
+    "city": "Orange City",
+    "state": "IA",
+    "zip": "51041",
+    "field_office": "St. Paul Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/sioux-county-jail"
+  },
+  {
+    "name": "South Louisiana ICE Processing Center",
+    "address": "3843 Stagg Ave",
+    "city": "Basile",
+    "state": "LA",
+    "zip": "70515",
+    "field_office": "New Orleans Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/south-louisiana-ice-processing-center"
+  },
+  {
+    "name": "South Texas ICE Processing Center",
+    "address": "566 Veterans Drive",
+    "city": "Pearsall",
+    "state": "TX",
+    "zip": "78061",
+    "field_office": "San Antonio Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/south-texas-ice-processing-center"
+  },
+  {
+    "name": "St. Clair County Jail",
+    "address": "1170 Michigan Road",
+    "city": "Port Huron",
+    "state": "MI",
+    "zip": "48060",
+    "field_office": "Detroit Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/st-clair-county-jail"
+  },
+  {
+    "name": "Ste. Genevieve County Detention Center",
+    "address": "5 Basler Drive",
+    "city": "Ste. Genevieve",
+    "state": "MO",
+    "zip": "63670",
+    "field_office": "Chicago Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/ste-genevieve-county-detention-center"
+  },
+  {
+    "name": "Stewart Detention Center",
+    "address": "146 CCA Road",
+    "city": "Lumpkin",
+    "state": "GA",
+    "zip": "31815",
+    "field_office": "Atlanta Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/stewart-detention-center"
+  },
+  {
+    "name": "Strafford County Corrections",
+    "address": "266 County Farm Road",
+    "city": "Dover",
+    "state": "NH",
+    "zip": "03820",
+    "field_office": "Boston Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/strafford-county-corrections"
+  },
+  {
+    "name": "Sweetwater County Detention Center",
+    "address": "50140 US Highway 191 South",
+    "city": "Rock Springs",
+    "state": "WY",
+    "zip": "82901",
+    "field_office": "Denver Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/sweetwater-county-detention-center"
+  },
+  {
+    "name": "T. Don Hutto Detention Center",
+    "address": "1001 Welch Street",
+    "city": "Taylor",
+    "state": "TX",
+    "zip": "76574",
+    "field_office": "San Antonio Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/t-don-hutto-detention-center"
+  },
+  {
+    "name": "Torrance County Detention Facility",
+    "address": "209 County Road A049",
+    "city": "Estancia",
+    "state": "NM",
+    "zip": "87016",
+    "field_office": "El Paso Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/torrance-county-detention-facility"
+  },
+  {
+    "name": "Two Bridges Regional Jail",
+    "address": "522 Bath Road",
+    "city": "Wiscasset",
+    "state": "ME",
+    "zip": "04578",
+    "field_office": "Boston Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/two-bridges-regional-jail"
+  },
+  {
+    "name": "Uinta County Detention Center",
+    "address": "77 County Road #109",
+    "city": "Evanston",
+    "state": "WY",
+    "zip": "82930",
+    "field_office": "Salt Lake City Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/uinta-county-detention-center"
+  },
+  {
+    "name": "Washoe County Jail",
+    "address": "911 E Parr Blvd",
+    "city": "Reno",
+    "state": "NV",
+    "zip": "89512",
+    "field_office": "Salt Lake City Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/washoe-county-jail"
+  },
+  {
+    "name": "West Tennessee Detention Facility",
+    "address": "6299 Finde Naifeh Drive",
+    "city": "Mason",
+    "state": "TN",
+    "zip": "38049",
+    "field_office": "New Orleans Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/west-tennessee-detention-facility"
+  },
+  {
+    "name": "Winn Correctional Center",
+    "address": "560 Gum Springs Road",
+    "city": "Winnfield",
+    "state": "LA",
+    "zip": "71483",
+    "field_office": "New Orleans Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/winn-correctional-center"
+  },
+  {
+    "name": "Wyatt Detention Facility",
+    "address": "950 High Street",
+    "city": "Central Falls",
+    "state": "RI",
+    "zip": "02863",
+    "field_office": "Boston Field Office",
+    "url": "https://www.ice.gov/detain/detention-facilities/wyatt-detention-facility"
+  }
+]
