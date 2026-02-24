@@ -1,0 +1,65 @@
+name: Stamp deploy-info.js
+
+# Runs on every push to main.
+# Updates deploy-info.js with the real commit SHA, message, and author
+# so that any SHA served via CDN has accurate version metadata.
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  stamp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2   # need parent to detect if deploy-info.js itself changed
+
+      - name: Skip if only deploy-info.js changed
+        id: check
+        run: |
+          CHANGED=$(git diff --name-only HEAD~1 HEAD)
+          echo "changed files: $CHANGED"
+          if [ "$CHANGED" = "deploy-info.js" ]; then
+            echo "skip=true" >> $GITHUB_OUTPUT
+          else
+            echo "skip=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Write deploy-info.js
+        if: steps.check.outputs.skip == 'false'
+        run: |
+          SHA="${{ github.sha }}"
+          SHORT_SHA="${SHA:0:7}"
+          TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          AUTHOR="${{ github.actor }}"
+          # Extract first line of commit message
+          MESSAGE=$(git log -1 --pretty=%s HEAD)
+          # Extract PR number from commit message if present
+          PR_NUMBER=$(echo "$MESSAGE" | grep -oP '#\K[0-9]+' | head -1 || echo "")
+
+          cat > deploy-info.js << JSEOF
+var DEPLOY_INFO = {
+  sha: "${SHA}",
+  shortSha: "${SHORT_SHA}",
+  timestamp: "${TIMESTAMP}",
+  message: $(echo "$MESSAGE" | python3 -c "import sys,json; print(json.dumps(sys.stdin.read().strip()))"),
+  author: "${AUTHOR}",
+  prNumber: "${PR_NUMBER}",
+  env: "production",
+  repo: "clovenbradshaw-ctrl/habeas_patches"
+};
+JSEOF
+
+      - name: Commit updated deploy-info.js
+        if: steps.check.outputs.skip == 'false'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add deploy-info.js
+          git diff --cached --quiet || git commit -m "chore: stamp deploy-info.js for ${{ github.sha }}"
+          git push

@@ -727,6 +727,7 @@ var EVT_PETITION = 'com.amino.petition';
 var EVT_PETITION_BLOCKS = 'com.amino.petition.blocks';
 var EVT_OP       = 'com.amino.op';
 var EVT_GITHUB   = 'com.amino.config.github';
+var EVT_VERSION  = 'com.amino.config.version';
 
 // ── Matrix REST Client ───────────────────────────────────────────
 var matrix = {
@@ -1272,6 +1273,8 @@ var S = {
   // Deployment management (admin only)
   adminTab: 'users',
   deployInfo: typeof DEPLOY_INFO !== 'undefined' ? DEPLOY_INFO : null,
+  matrixVersionSha: null,   // SHA stored in Matrix com.amino.config.version state event
+  matrixVersionInfo: null,  // Full version event content from Matrix
   deployHistory: [],
   deployHistoryLoaded: false,
   deployHistoryError: '',
@@ -1549,6 +1552,21 @@ function hydrateFromMatrix() {
         S.deployGithubToken = ghEvt.content.pat;
         S.deployTokenSet = true;
         sessionStorage.setItem('amino_gh_token', ghEvt.content.pat);
+      }
+
+      // Approved version pointer (which SHA of habeas_patches is live)
+      var verEvt = matrix.getStateEvent(matrix.orgRoomId, EVT_VERSION, '');
+      if (verEvt && verEvt.content && verEvt.content.sha) {
+        S.matrixVersionSha = verEvt.content.sha;
+        S.matrixVersionInfo = verEvt.content;
+        // If user is running a different SHA than what Matrix says is approved,
+        // show a reload prompt (only relevant once habeas_app bootstrap is in place)
+        if (S.deployInfo && S.deployInfo.sha !== 'local' &&
+            S.deployInfo.sha !== verEvt.content.sha) {
+          setTimeout(function() {
+            toast('A new version is available. Reload to update.', 'info');
+          }, 1500);
+        }
       }
 
       // Users
@@ -3524,7 +3542,7 @@ function renderDirectory() {
 function ghApiFetch(path, options) {
   var token = S.deployGithubToken;
   if (!token) return Promise.reject({ error: 'No GitHub token configured' });
-  var repo = (S.deployInfo && S.deployInfo.repo) || 'clovenbradshaw-ctrl/habeas_app';
+  var repo = (S.deployInfo && S.deployInfo.repo) || 'clovenbradshaw-ctrl/habeas_patches';
   var url = 'https://api.github.com/repos/' + repo + path;
   var opts = Object.assign({
     headers: {
@@ -3553,7 +3571,7 @@ function loadDeployHistory() {
           author: c.commit.author.name,
           date: c.commit.author.date,
           prNumber: prMatch ? prMatch[1] : '',
-          isCurrent: S.deployInfo && c.sha === S.deployInfo.sha,
+          isCurrent: c.sha === (S.matrixVersionSha || (S.deployInfo && S.deployInfo.sha)),
         };
       });
       setState({ deployHistory: history, deployHistoryLoaded: true });
@@ -3568,71 +3586,61 @@ function loadDeployHistory() {
 
 function triggerRollback(sha, reason) {
   setState({ deployRollbackBusy: true });
-  var repo = (S.deployInfo && S.deployInfo.repo) || 'clovenbradshaw-ctrl/habeas_app';
-  return fetch('https://api.github.com/repos/' + repo + '/actions/workflows/rollback.yml/dispatches', {
-    method: 'POST',
-    headers: {
-      'Authorization': 'token ' + S.deployGithubToken,
-      'Accept': 'application/vnd.github.v3+json',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      ref: 'main',
-      inputs: {
-        target_sha: sha,
-        reason: reason || 'Admin rollback from deployment panel',
-      }
-    })
-  }).then(function(r) {
-    setState({ deployRollbackBusy: false });
-    if (r.status === 204 || r.ok) {
-      toast('Rollback triggered. Deploying ' + sha.substring(0, 7) + '...', 'success');
-    } else {
-      return r.json().then(function(d) {
-        toast('Rollback failed: ' + (d.message || r.status), 'error');
-      });
-    }
+  var repo = (S.deployInfo && S.deployInfo.repo) || 'clovenbradshaw-ctrl/habeas_patches';
+  var entry = S.deployHistory.find(function(e) { return e.sha === sha; }) || {};
+  return matrix.sendStateEvent(matrix.orgRoomId, EVT_VERSION, {
+    sha: sha,
+    shortSha: sha.substring(0, 7),
+    message: entry.message || reason || 'Rollback',
+    author: entry.author || matrix.userId,
+    timestamp: new Date().toISOString(),
+    repo: repo,
+    env: 'production',
+    rollback: true,
+  }, '').then(function() {
+    setState({ deployRollbackBusy: false, matrixVersionSha: sha });
+    toast('Rolled back to ' + sha.substring(0, 7) + '. New page loads will use this version.', 'success');
   }).catch(function(e) {
     setState({ deployRollbackBusy: false });
-    toast('Rollback failed: ' + (e.message || 'Network error'), 'error');
+    toast('Rollback failed: ' + ((e && e.error) || (e && e.message) || 'Unknown error'), 'error');
   });
 }
 
 function triggerProductionDeploy(sha) {
   setState({ deployDeployBusy: true });
-  var repo = (S.deployInfo && S.deployInfo.repo) || 'clovenbradshaw-ctrl/habeas_app';
-  return fetch('https://api.github.com/repos/' + repo + '/actions/workflows/deploy.yml/dispatches', {
-    method: 'POST',
-    headers: {
-      'Authorization': 'token ' + S.deployGithubToken,
-      'Accept': 'application/vnd.github.v3+json',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      ref: 'main',
-      inputs: {
-        target_sha: sha || '',
-      }
-    })
-  }).then(function(r) {
+  var repo = (S.deployInfo && S.deployInfo.repo) || 'clovenbradshaw-ctrl/habeas_patches';
+  // If no SHA specified, use the most recent commit from history
+  if (!sha && S.deployHistory.length > 0) sha = S.deployHistory[0].sha;
+  if (!sha) {
+    toast('No commit found to deploy.', 'error');
     setState({ deployDeployBusy: false });
-    if (r.status === 204 || r.ok) {
-      toast('Production deploy triggered' + (sha ? ' for ' + sha.substring(0, 7) : '') + '. Users will see the update shortly.', 'success');
-    } else {
-      return r.json().then(function(d) {
-        toast('Deploy failed: ' + (d.message || r.status), 'error');
-      });
-    }
+    return;
+  }
+  var entry = S.deployHistory.find(function(e) { return e.sha === sha; }) || {};
+  return matrix.sendStateEvent(matrix.orgRoomId, EVT_VERSION, {
+    sha: sha,
+    shortSha: sha.substring(0, 7),
+    message: entry.message || '',
+    author: entry.author || matrix.userId,
+    timestamp: new Date().toISOString(),
+    repo: repo,
+    env: 'production',
+  }, '').then(function() {
+    setState({ deployDeployBusy: false, matrixVersionSha: sha });
+    toast('Version ' + sha.substring(0, 7) + ' approved. New page loads will use this version.', 'success');
   }).catch(function(e) {
     setState({ deployDeployBusy: false });
-    toast('Deploy failed: ' + (e.message || 'Network error'), 'error');
+    toast('Deploy failed: ' + ((e && e.error) || (e && e.message) || 'Unknown error'), 'error');
   });
 }
 
 // ── Review gate: load diff between production and main HEAD ─────
 function loadDeployDiff() {
   var info = S.deployInfo;
-  var baseSha = (info && info.env === 'production' && info.sha !== 'local') ? info.sha : '';
+  // Prefer the SHA stored in Matrix (that's what habeas_app bootstrap actually loads),
+  // fall back to the SHA baked into deploy-info.js at build time.
+  var baseSha = S.matrixVersionSha ||
+    ((info && info.env === 'production' && info.sha !== 'local') ? info.sha : '');
   setState({ deployReviewState: 'loading', deployDiffError: '', deployDiffFiles: [], deployDiffStats: null });
 
   if (!baseSha) {
@@ -3815,7 +3823,7 @@ function renderDeployments() {
 
         // ── Review Gate: must review before deploying ─────────────
         var reviewState = S.deployReviewState;
-        var repo = (S.deployInfo && S.deployInfo.repo) || 'clovenbradshaw-ctrl/habeas_app';
+        var repo = (S.deployInfo && S.deployInfo.repo) || 'clovenbradshaw-ctrl/habeas_patches';
 
         if (reviewState === 'none') {
           // Step 1: Admin must start a review
