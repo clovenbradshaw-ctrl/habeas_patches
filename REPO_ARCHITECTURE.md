@@ -1,51 +1,41 @@
 # Repo Architecture — habeas_patches
 
-## What Is This Repo?
+## Overview
 
-`clovenbradshaw-ctrl/habeas_patches` is the **active development repo** for the Amino Habeas app. This is where Claude Code and developers push changes. The live app at `app.aminoimmigration.com` is served from GitHub Pages out of this repo, but **not every merge goes live automatically** — an admin must review and explicitly trigger a deploy.
+The Amino Habeas app is split across two GitHub repos:
 
-Think of it this way:
+| Repo | Purpose |
+|---|---|
+| `clovenbradshaw-ctrl/habeas_app` | The **stable launcher** — minimal bootstrap served to users. Rarely changes. |
+| `clovenbradshaw-ctrl/habeas_patches` | The **app code** — where all real development happens. This repo. |
 
-```
-Developer / Claude Code
-        │
-        │  push feature branch / PR
-        ▼
-  habeas_patches (this repo)
-        │
-        │  commits accumulate on main
-        │  (NOT auto-deployed)
-        ▼
-  Admin logs into app
-  sees "Deploy" panel (admin only)
-        │
-        │  reviews diff, approves
-        │  clicks "Deploy to Production"
-        ▼
-  GitHub Actions → builds deploy-info.js → pushes to gh-pages
-        │
-        ▼
-  app.aminoimmigration.com  ← users see the update
-```
+The running app at `app.aminoimmigration.com` is served from `habeas_app`, but the actual application logic lives here in `habeas_patches`. `habeas_app` loads a specific **versioned copy** of `app.js` from `habeas_patches` — and which version it loads is controlled by a **Matrix state event** in the `!org` room.
 
 ---
 
-## Two-Repo Concept
+## How Versioning Works
 
-The user-facing experience is a **single URL** (`app.aminoimmigration.com`), but there are two logical states:
+```
+habeas_app (stable bootstrap)
+    │
+    │  on load: reads Matrix !org room
+    │  for state event: com.amino.config.version
+    │  { sha: "abc1234", repo: "clovenbradshaw-ctrl/habeas_patches" }
+    │
+    ▼
+loads app.js from habeas_patches at that exact SHA
+(e.g. via jsDelivr CDN or raw.githubusercontent.com)
+    │
+    ▼
+Users see that version of the app
+```
 
-| State | What it is |
-|---|---|
-| **main branch** | Latest merged code — may not be live yet |
-| **gh-pages / deployed** | What users actually see right now |
+When admin approves an update:
+1. The Matrix state event `com.amino.config.version` is updated to the new SHA
+2. All users loading the page get the new version immediately — no redeployment of `habeas_app` needed
+3. Rollback = update the Matrix state event back to any prior SHA
 
-The gap between them is intentional. Merging to `main` does not automatically push to users. The admin controls when the live app advances.
-
-### Why not auto-deploy?
-
-- Updates to an immigration case management app need human sign-off before reaching attorneys
-- Admin can preview changes in **dev mode** (see below) before pushing live
-- Easy rollback: admin can redeploy any prior commit via the same panel
+**`habeas_app` itself does not change.** It is just a loader. All feature work, bug fixes, and improvements happen in `habeas_patches`.
 
 ---
 
@@ -53,158 +43,125 @@ The gap between them is intentional. Merging to `main` does not automatically pu
 
 ```
 habeas_patches/
-├── index.html          ← Static bootstrap. Loads scripts. Rarely changes.
+├── index.html          ← Standalone dev/test entrypoint (not served to users in production)
 ├── app.js              ← Entire application (~6700 lines, vanilla JS, no build step)
 ├── styles.css          ← All styles
-├── deploy-info.js      ← Injected at deploy time — never edit by hand (see below)
-├── courts.json         ← Seed data for courts (used during initial setup)
-├── facilities.json     ← Seed data for facilities (used during initial setup)
+├── deploy-info.js      ← Version metadata (see below)
+├── courts.json         ← Seed data for courts (initial setup only)
+├── facilities.json     ← Seed data for facilities (initial setup only)
 ├── template.html       ← Petition document template
 ├── favicon.svg         ← App icon
-├── CLAUDE.md           ← Full system architecture (Matrix rooms, data model, etc.)
+├── CLAUDE.md           ← Full system architecture (Matrix rooms, data model, event types)
 └── REPO_ARCHITECTURE.md  ← This file
 ```
 
-**`index.html` is the only truly static file** — it can't be changed by Matrix or runtime config. Keep it minimal: it's just a loader for `app.js`, `styles.css`, and `deploy-info.js`.
+**`app.js` is the whole app.** There's no build step, no npm, no React. It's vanilla JS that calls the Matrix REST API directly. Read `CLAUDE.md` for the full data model.
 
-**`app.js` is the whole app.** There's no build step, no npm, no React. It's vanilla JS that calls the Matrix REST API directly. To understand the data model, read `CLAUDE.md`.
+**`index.html` is for local development only.** In production, `habeas_app` provides the HTML wrapper that loads `app.js` from `habeas_patches` at a pinned SHA.
 
 ---
 
 ## deploy-info.js
 
-This file is **auto-generated by GitHub Actions** at deploy time. Never edit it by hand in a feature branch — it will be overwritten.
+This file provides version metadata that the running app uses to display the current version and power the deploy panel.
 
 ```js
-// Injected by CI — do not edit manually
 var DEPLOY_INFO = {
-  sha: "abc1234...",       // full commit SHA
-  shortSha: "abc1234",     // 7-char abbreviated SHA
-  timestamp: "2026-...",   // ISO deploy timestamp
+  sha: "abc1234...",       // full commit SHA (this version of app.js)
+  shortSha: "abc1234",     // 7-char abbreviated SHA shown in nav badge
+  timestamp: "2026-...",   // when this version was approved/deployed
   message: "Fix petition export", // commit message
   author: "clovenbradshaw-ctrl",
-  prNumber: "42",          // PR number if deployed from a PR
+  prNumber: "42",          // PR number if relevant
   env: "production",       // "production" | "development"
   repo: "clovenbradshaw-ctrl/habeas_patches",
 };
 ```
 
-In local development (running the files directly), `deploy-info.js` has `env: "development"` and `sha: "local"`. The app detects this and shows a **DEV badge** (see below).
+In local dev, `deploy-info.js` has `env: "development"` and `sha: "local"`. The app shows a **DEV badge** in this state.
 
 ---
 
 ## Admin Deploy Panel
 
-The deploy panel lives at **Admin → Deploy** and is only visible to users with `role: "admin"`.
+The deploy panel lives at **Admin → Deploy** and is only visible to `role: "admin"` users.
 
-It connects to the GitHub API using a **Personal Access Token** stored in the Matrix `!org` room as a state event. This means the token is shared across all admin sessions automatically — one admin saves it once and all admins can use the deploy panel.
+It connects to the GitHub API using a **Personal Access Token stored in Matrix** — specifically as a state event in the `!org` room (`com.amino.config.github` or similar). This means:
+- Admin saves the token once in the deploy panel
+- It syncs to all admin sessions automatically via Matrix
+- No per-browser or per-device configuration needed
 
-### Deploy panel capabilities
+### What the panel does
 
-1. **View pending commits** — commits merged to `main` that haven't been deployed yet
-2. **Review diff** — see file-by-file changes between production SHA and latest `main`
-3. **Approve + Deploy** — trigger the `deploy.yml` GitHub Actions workflow for a specific SHA
-4. **Rollback** — trigger the `rollback.yml` workflow to redeploy any prior commit
+1. **View pending commits** — commits merged to `main` in `habeas_patches` that aren't yet the active version
+2. **Review diff** — file-by-file changes between the currently active SHA and `main`
+3. **Approve + go live** — updates the Matrix `!org` state event to point to the new SHA → all users immediately load the new version
+4. **Rollback** — updates the Matrix state event to any prior SHA → instant revert for all users
 
-### Workflow trigger flow
+### No GitHub Actions required
 
-```
-Admin clicks "Deploy to Production"
-    │
-    ▼
-app.js → POST /repos/habeas_patches/actions/workflows/deploy.yml/dispatches
-    │     { ref: "main", inputs: { target_sha: "abc1234" } }
-    ▼
-GitHub Actions runs deploy.yml
-    │  - checks out target_sha
-    │  - generates deploy-info.js with env: "production"
-    │  - copies files to gh-pages branch
-    ▼
-GitHub Pages serves updated files
-    ▼
-Users see the new version on next page load
-```
+Because the "deploy" is just updating a Matrix state event, there's no GitHub Actions pipeline, no build step, and no branch push involved. The version pointer lives in Matrix, not in any repo file.
 
 ---
 
-## Dev Mode (DEV Badge)
+## Dev Badge
 
-When the running app's `DEPLOY_INFO.env` is not `"production"` — which is the case for:
-- Local file:// development
-- Any deployment where GitHub Actions didn't inject the deploy-info
+When `DEPLOY_INFO.env !== "production"` the app shows a **DEV badge** in the navigation. This happens:
+- During local development (`env: "development"`, `sha: "local"`)
+- If `habeas_app` loads a version of `app.js` that hasn't been marked as production-approved
 
-...the app shows a **DEV badge** in the navigation. This badge is visible to all logged-in users (not just admins), so attorneys know they're on a non-production instance.
-
-The deploy panel also shows a warning banner in dev mode reminding admins that changes won't reach users until a deploy is triggered.
+The DEV badge is visible to all logged-in users so attorneys know they're not on the live version.
 
 ---
 
-## How Matrix Stores Configuration
+## Developer Workflow
 
-All runtime configuration (who can deploy, what GitHub token to use, directory data) lives in the Matrix `!org` room, **not** in this repo. This means:
+### For Claude Code / developers pushing updates
 
-- Updating the GitHub PAT doesn't require a code push — admin saves it in the deploy panel once, it syncs to all logged-in sessions via Matrix
-- Directory data (facilities, courts, attorneys) is in Matrix state, not in these files
-- `courts.json` and `facilities.json` in this repo are **seed data** for initial setup only — they are not read by the live app
-
-The one exception: `CONFIG` at the top of `app.js` hardcodes the Matrix server URL and org room alias. Changing homeservers requires a code change.
-
----
-
-## How to Work in This Repo
-
-### For Claude Code / developers
-
-1. **Branch from `main`** — name branches descriptively (e.g., `fix/petition-export-date`, `feat/template-picker`)
-2. **Edit `app.js` and/or `styles.css`** — no build step needed
+1. **Branch from `main`** — name branches descriptively (`fix/petition-export-date`, `feat/template-picker`)
+2. **Edit `app.js` and/or `styles.css`** — no build step, test by opening `index.html` locally
 3. **Open a PR to `main`** — describe what changed and why
-4. **Merge to `main`** — this does NOT go live yet
-5. Admin reviews and deploys when ready
+4. **Merge to `main`** — this does NOT go live yet; it just makes the commit available for admin review
 
 ### Branch naming (Claude Code sessions)
 
-Claude Code branches follow the pattern: `claude/<description>-<sessionId>`
+Claude Code branches follow: `claude/<description>-<sessionId>`
 
-These are the branches Claude Code works on during an active session. They should be reviewed and merged by a human before the admin deploys.
+These are reviewed and merged by a human. The admin then decides when (and whether) to make the new version live via the deploy panel.
 
 ### Never do this
 
-- Don't edit `deploy-info.js` — it's overwritten by CI
-- Don't push directly to `gh-pages` — the GitHub Actions workflow manages that
-- Don't auto-merge to `main` without a PR review for substantial changes
-- Don't store secrets (PAT tokens, passwords) in this repo — they go in Matrix state
+- Don't store secrets (PAT tokens, passwords) in this repo — they live in Matrix state
+- Don't push directly to `habeas_app` unless changing the bootstrap loader itself (rare)
+- Don't merge substantial changes to `main` without a PR review
 
 ---
 
-## GitHub Actions Workflows
-
-Two workflows are expected in `.github/workflows/`:
-
-| Workflow | Trigger | What it does |
-|---|---|---|
-| `deploy.yml` | `workflow_dispatch` (manual) | Checks out `target_sha`, injects `deploy-info.js` with `env: production`, deploys to `gh-pages` |
-| `rollback.yml` | `workflow_dispatch` (manual) | Same as deploy but for a prior SHA — effectively a redeploy |
-
-**Important:** GitHub Pages must be set to **Source = GitHub Actions** (not "Deploy from a branch"). If it's set to "Deploy from a branch", every push to `main` would auto-deploy, bypassing the admin review gate.
-
----
-
-## Summary: The Intended Flow
+## Summary
 
 ```
-Claude Code (or dev) → commits to feature branch → PR → merge to main
-                                                              │
-                                          (no auto-deploy)   │
-                                                              ▼
-                                              Admin opens Deploy panel
-                                              reviews diff of pending commits
-                                              clicks "Deploy to Production"
-                                                              │
-                                                              ▼
-                                              GitHub Actions → gh-pages
-                                                              │
-                                                              ▼
-                                              Users see update on next load
+Developer / Claude Code
+        │
+        │  feature branch → PR → merge to main
+        ▼
+  habeas_patches/main
+  (code is available but not yet live)
+        │
+        │  Admin opens Deploy panel
+        │  reviews pending commits + diff
+        │  clicks "Approve & Go Live"
+        ▼
+  Matrix !org room state event updated:
+  com.amino.config.version { sha: "new-sha" }
+        │
+        ▼
+  habeas_app bootstrap reads new SHA on next user load
+  → serves app.js from habeas_patches@new-sha via CDN
+        │
+        ▼
+  All users see the update immediately
+
+  (Rollback = same thing, pointing SHA back to any prior commit)
 ```
 
-The Matrix `!org` room ties it together: it stores the GitHub PAT (so the deploy panel works across sessions), user roles (so only admins see the deploy panel), and all directory/case data (so none of that lives in this repo).
+The key insight: **`habeas_app` never changes.** It's a thin loader. All development happens here. The "deploy" is a Matrix state event update, giving the admin instant, atomic control over what version every user sees — with full rollback capability to any prior merge.
